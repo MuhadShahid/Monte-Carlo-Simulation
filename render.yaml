@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: risklab-monte-carlo
+    env: python
+    repo: https://github.com/MuhadShahid/Monte-Carlo-Simulation # Auto-populated.
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "streamlit run app/main.py --server.port $PORT --server.address 0.0.0.0"
+    plan: free
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
